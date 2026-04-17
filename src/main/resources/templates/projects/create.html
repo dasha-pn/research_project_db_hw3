@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Research Project</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="page">
+    <div class="container">
+        <div class="card">
+            <h1 class="form-title">Add Project</h1>
+            <p class="form-subtitle">
+                Insert a new project record into the database.
+            </p>
+
+            <form th:action="@{/projects/create}" th:object="${project}" method="post">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="projectInternalCode">Project Internal Code</label>
+                        <input type="text" id="projectInternalCode" th:field="*{projectInternalCode}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grantAgreementNumber">Grant Agreement Number</label>
+                        <input type="text" id="grantAgreementNumber" th:field="*{grantAgreementNumber}">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="projectTitle">Project Title</label>
+                        <input type="text" id="projectTitle" th:field="*{projectTitle}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" th:field="*{startDate}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectStatus">Project Status</label>
+                        <select id="projectStatus" th:field="*{projectStatus}" required>
+                            <option value="">-- Select status --</option>
+                            <option th:each="status : ${statuses}"
+                                    th:value="${status}"
+                                    th:text="${status}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="hostOrgName">Hosting Organization</label>
+                        <select id="hostOrgName" th:field="*{hostOrgName}" required>
+                            <option value="">-- Select organization --</option>
+                            <option th:each="org : ${organizations}"
+                                    th:value="${org.orgName}"
+                                    th:text="${org.orgName}"></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn-primary">Create Project</button>
+                    <a th:href="@{/projects}" class="btn-secondary">Back to projects</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

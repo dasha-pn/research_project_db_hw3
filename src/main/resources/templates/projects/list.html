@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Managing</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="page">
+    <div class="container">
+        <div class="card">
+            <h1 class="form-title">Project Managing</h1>
+            <p class="form-subtitle">
+                This section allows inserting, updating, and deleting project records.
+            </p>
+
+            <div th:if="${param.created}" class="alert-success">
+                Project was successfully created.
+            </div>
+            <div th:if="${param.updated}" class="alert-success">
+                Project was successfully updated.
+            </div>
+            <div th:if="${param.deleted}" class="alert-success">
+                Project was successfully deleted.
+            </div>
+
+            <div class="actions" style="margin-bottom: 20px;">
+                <a th:href="@{/projects/create}" class="btn-primary">Add Project</a>
+                <a th:href="@{/}" class="btn-secondary">Back to home</a>
+            </div>
+
+            <table class="styled-table">
+                <thead>
+                <tr>
+                    <th>Project Code</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Start Date</th>
+                    <th>Host Organization</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="project : ${projects}">
+                    <td th:text="${project.projectInternalCode}"></td>
+                    <td th:text="${project.projectTitle}"></td>
+                    <td th:text="${project.projectStatus}"></td>
+                    <td th:text="${project.startDate}"></td>
+                    <td th:text="${project.hostOrgName}"></td>
+                    <td>
+                        <a th:href="@{/projects/edit/{id}(id=${project.projectInternalCode})}" class="btn-small btn-edit">Edit</a>
+                        <a th:href="@{/projects/delete/{id}(id=${project.projectInternalCode})}" class="btn-small btn-delete">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
