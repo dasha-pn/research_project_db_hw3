@@ -1,4 +1,4 @@
-# LAB-11: Database system development (Flights Catering domain)
+# Database system development (Research project domain)
 
 ## Prerequisites
 
