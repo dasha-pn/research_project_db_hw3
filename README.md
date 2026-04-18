@@ -150,7 +150,3 @@ Spring-related projects are usually brilliantly documented. You can find the doc
 * [Lombok Documentation] (https://projectlombok.org/features/all)
 
 You can also check this ([Spring PetClinic] (https://github.com/spring-projects/spring-petclinic)) project as a great reference project for Spring Boot application development.
-
----
-
-Enjoy coding!
