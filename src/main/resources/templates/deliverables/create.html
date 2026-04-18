@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Deliverable Submission</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="page">
+    <div class="container">
+        <div class="card deliv-accent">
+            <h1 class="form-title deliv-title">Add Deliverable Submission</h1>
+            <p class="form-subtitle">
+                Insert a new deliverable submission record into the database.
+            </p>
+
+            <form th:action="@{/deliverables/create}" th:object="${submission}" method="post">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="submissionId">Submission ID</label>
+                        <input type="number" id="submissionId" th:field="*{submissionId}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deliverableReference">Project and Deliverable</label>
+                        <select id="deliverableReference" name="deliverableReference" required>
+                            <option value="">-- Select deliverable --</option>
+                            <option th:each="d : ${deliverables}"
+                                    th:value="${d.projectInternalCode + '|' + d.deliverablePlanned}"
+                                    th:text="${d.projectInternalCode + ' | ' + d.deliverablePlanned}">
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="submissionDate">Submission Date</label>
+                        <input type="date" id="submissionDate" th:field="*{submissionDate}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status" th:field="*{status}" required>
+                            <option value="">-- Select status --</option>
+                            <option th:each="status : ${statuses}"
+                                    th:value="${status}"
+                                    th:text="${status}">
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="fileReference">File Reference</label>
+                        <input type="text" id="fileReference" th:field="*{fileReference}" required>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn-primary deliv-btn-primary">Create Deliverable Submission</button>
+                    <a th:href="@{/deliverables}" class="btn-secondary">Back to deliverables</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

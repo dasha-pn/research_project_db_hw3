@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Deliverable Submission Managing</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="page">
+    <div class="container">
+        <div class="card deliv-accent">
+            <h1 class="form-title deliv-title">Deliverable Submission Managing</h1>
+            <p class="form-subtitle">
+                This section allows inserting, updating, and deleting deliverable submission records.
+            </p>
+
+            <div th:if="${param.created}" class="alert-success">
+                Deliverable submission was successfully created.
+            </div>
+            <div th:if="${param.updated}" class="alert-success">
+                Deliverable submission was successfully updated.
+            </div>
+            <div th:if="${param.deleted}" class="alert-success">
+                Deliverable submission was successfully deleted.
+            </div>
+
+            <div class="actions" style="margin-bottom: 20px;">
+                <a th:href="@{/deliverables/create}" class="btn-primary deliv-btn-primary">Add Deliverable Submission</a>
+                <a th:href="@{/}" class="btn-secondary">Back to home</a>
+            </div>
+
+            <table class="styled-table deliv-table">
+                <thead>
+                <tr>
+                    <th>Submission ID</th>
+                    <th>Project Code</th>
+                    <th>Deliverable</th>
+                    <th>Submission Date</th>
+                    <th>Status</th>
+                    <th>File Reference</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="s : ${submissions}">
+                    <td th:text="${s.submissionId}"></td>
+                    <td th:text="${s.projectInternalCode}"></td>
+                    <td th:text="${s.deliverablePlanned}"></td>
+                    <td th:text="${s.submissionDate}"></td>
+                    <td th:text="${s.status}"></td>
+                    <td th:text="${s.fileReference}"></td>
+                    <td>
+                        <a th:href="@{/deliverables/edit/{id}(id=${s.submissionId})}" class="btn-small btn-edit">Edit</a>
+                        <a th:href="@{/deliverables/delete/{id}(id=${s.submissionId})}" class="btn-small btn-delete">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

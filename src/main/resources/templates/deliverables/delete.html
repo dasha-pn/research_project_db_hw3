@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Deliverable Submission</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="page">
+    <div class="container">
+        <div class="card deliv-accent">
+            <h1 class="form-title deliv-title">Delete Deliverable Submission</h1>
+            <p class="form-subtitle">
+                Please confirm deletion of the selected deliverable submission record.
+            </p>
+
+            <div class="delete-box">
+                <p><strong>Submission ID:</strong> <span th:text="${submission.submissionId}"></span></p>
+                <p><strong>Project Code:</strong> <span th:text="${submission.projectInternalCode}"></span></p>
+                <p><strong>Deliverable:</strong> <span th:text="${submission.deliverablePlanned}"></span></p>
+                <p><strong>Submission Date:</strong> <span th:text="${submission.submissionDate}"></span></p>
+                <p><strong>Status:</strong> <span th:text="${submission.status}"></span></p>
+                <p><strong>File Reference:</strong> <span th:text="${submission.fileReference}"></span></p>
+            </div>
+
+            <form th:action="@{/deliverables/delete/{id}(id=${submission.submissionId})}" method="post">
+                <div class="actions">
+                    <button type="submit" class="btn-danger">Delete Deliverable Submission</button>
+                    <a th:href="@{/deliverables}" class="btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

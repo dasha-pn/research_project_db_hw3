@@ -275,3 +275,28 @@ select:focus {
     background: #f0fdf4;
     border: 1px solid #bbf7d0;
 }
+
+.deliv-accent {
+    border-left: 6px solid #8b5cf6;
+}
+
+.deliv-title {
+    color: #6d28d9;
+}
+
+.deliv-btn-primary {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+}
+
+.deliv-btn-primary:hover {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+}
+
+.deliv-table thead {
+    background: #7c3aed;
+}
+
+.deliv-table tbody tr:hover {
+    background: #f5f3ff;
+}
