@@ -245,3 +245,33 @@ select:focus {
     border-radius: 12px;
     margin-bottom: 20px;
 }
+
+.task-accent {
+    border-left: 6px solid #10b981;
+}
+
+.task-title {
+    color: #047857;
+}
+
+.task-btn-primary {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.task-btn-primary:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+.task-table thead {
+    background: #059669;
+}
+
+.task-table tbody tr:hover {
+    background: #ecfdf5;
+}
+
+.task-delete-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+}

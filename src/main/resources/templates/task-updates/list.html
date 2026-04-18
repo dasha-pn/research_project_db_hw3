@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Update Managing</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="page">
+    <div class="container">
+        <div class="card task-accent">
+            <h1 class="form-title task-title">Task Update Managing</h1>
+            <p class="form-subtitle">
+                This section allows inserting, updating, and deleting task update records.
+            </p>
+
+            <div th:if="${param.created}" class="alert-success">
+                Task update was successfully created.
+            </div>
+            <div th:if="${param.updated}" class="alert-success">
+                Task update was successfully updated.
+            </div>
+            <div th:if="${param.deleted}" class="alert-success">
+                Task update was successfully deleted.
+            </div>
+
+            <div class="actions" style="margin-bottom: 20px;">
+                <a th:href="@{/task-updates/create}" class="btn-primary task-btn-primary">Add Task Update</a>
+                <a th:href="@{/}" class="btn-secondary">Back to home</a>
+            </div>
+
+            <table class="styled-table task-table">
+                <thead>
+                <tr>
+                    <th>Update ID</th>
+                    <th>Project Code</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Completion Date</th>
+                    <th>Progress %</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="upd : ${taskUpdates}">
+                    <td th:text="${upd.updateId}"></td>
+                    <td th:text="${upd.projectInternalCode}"></td>
+                    <td th:text="${upd.projectTask}"></td>
+                    <td th:text="${upd.taskStatus}"></td>
+                    <td th:text="${upd.completionDate}"></td>
+                    <td th:text="${upd.taskProgressPercent}"></td>
+                    <td>
+                        <a th:href="@{/task-updates/edit/{id}(id=${upd.updateId})}" class="btn-small btn-edit">Edit</a>
+                        <a th:href="@{/task-updates/delete/{id}(id=${upd.updateId})}" class="btn-small btn-delete">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -2,39 +2,39 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Task Update</title>
+    <title>Add Task Update</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <div class="page">
     <div class="container">
         <div class="card task-accent">
-            <h1 class="form-title task-title">Edit Task Update</h1>
+            <h1 class="form-title task-title">Add Task Update</h1>
             <p class="form-subtitle">
-                Update the selected task update record.
+                Insert a new task update record into the database.
             </p>
 
-            <form th:action="@{/task-updates/edit/{id}(id=${taskUpdate.updateId})}" th:object="${taskUpdate}" method="post">
+            <form th:action="@{/task-updates/create}" th:object="${taskUpdate}" method="post">
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="updateId">Update ID</label>
-                        <input type="number" id="updateId" th:field="*{updateId}" readonly>
+                        <input type="number" id="updateId" th:field="*{updateId}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="taskReference">Project and Task</label>
                         <select id="taskReference" name="taskReference" required>
+                            <option value="">-- Select task --</option>
                             <option th:each="task : ${tasks}"
                                     th:value="${task.projectInternalCode + '|' + task.projectTask}"
-                                    th:text="${task.projectInternalCode + ' | ' + task.projectTask}"
-                                    th:selected="${task.projectInternalCode == taskUpdate.projectInternalCode and task.projectTask == taskUpdate.projectTask}">
-                            </option>
+                                    th:text="${task.projectInternalCode + ' | ' + task.projectTask}"></option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="taskStatus">Task Status</label>
                         <select id="taskStatus" th:field="*{taskStatus}" required>
+                            <option value="">-- Select status --</option>
                             <option th:each="status : ${statuses}"
                                     th:value="${status}"
                                     th:text="${status}"></option>
@@ -53,8 +53,8 @@
                 </div>
 
                 <div class="actions">
-                    <button type="submit" class="btn-primary task-btn-primary">Update Task Update</button>
-                    <a th:href="@{/task-updates}" class="btn-secondary">Cancel</a>
+                    <button type="submit" class="btn-primary task-btn-primary">Create Task Update</button>
+                    <a th:href="@{/task-updates}" class="btn-secondary">Back to task updates</a>
                 </div>
             </form>
         </div>
