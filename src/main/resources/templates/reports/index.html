@@ -3,45 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Reports</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
 
-        h1 {
-            margin-bottom: 24px;
-        }
-
-        .actions {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        a.button {
-            display: inline-block;
-            padding: 10px 16px;
-            background: #1976d2;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-
-        a.button:hover {
-            background: #125aa0;
-        }
-    </style>
+    <!-- ПІДКЛЮЧЕННЯ CSS -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
+
 <body>
-<h1>Reports</h1>
+<div class="page">
+    <div class="container">
+        <div class="card report-accent">
 
-<div class="actions">
-    <a class="button" th:href="@{/reports/project-progress}">Open Project Progress Summary</a>
+            <h1 class="title">Reports</h1>
+            <p class="subtitle">
+                Select a report to view aggregated data and analytics for research projects.
+            </p>
+
+            <div class="reports-grid">
+
+                <div class="report-card">
+                    <div class="report-title">
+                        Project Progress Summary
+                    </div>
+                    <div class="report-desc">
+                        Aggregated overview of task execution progress for all projects.
+                    </div>
+
+                    <a class="link-button"
+                       th:href="@{/reports/project-progress}">
+                        Open Report
+                    </a>
+                </div>
+
+                <!-- ТУТ ДОДАСИ ЩЕ 2 REPORTS -->
+            </div>
+
+            <div class="actions">
+                <a class="btn-secondary" th:href="@{/}">
+                    Back to Home
+                </a>
+            </div>
+
+        </div>
+    </div>
 </div>
-
-<p style="margin-top: 24px;">
-    <a th:href="@{/}">Back to Home</a>
-</p>
 </body>
 </html>
