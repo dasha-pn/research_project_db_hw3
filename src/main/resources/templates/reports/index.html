@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1 {
+            margin-bottom: 24px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #1976d2;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        a.button:hover {
+            background: #125aa0;
+        }
+    </style>
+</head>
+<body>
+<h1>Reports</h1>
+
+<div class="actions">
+    <a class="button" th:href="@{/reports/project-progress}">Open Project Progress Summary</a>
+</div>
+
+<p style="margin-top: 24px;">
+    <a th:href="@{/}">Back to Home</a>
+</p>
+</body>
+</html>
