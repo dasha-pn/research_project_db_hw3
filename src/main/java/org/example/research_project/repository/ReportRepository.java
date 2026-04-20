@@ -59,7 +59,7 @@ public class ReportRepository {
         String sql = """
                 SELECT
                     ds.project_internal_code AS projectInternalCode,
-                    COUNT(ds.deliverable_id) AS totalDeliverables,
+                    COUNT(*) AS totalDeliverables,
                     SUM(CASE WHEN ds.status = 'accepted' THEN 1 ELSE 0 END) AS acceptedDeliverables,
                     SUM(CASE WHEN ds.status = 'pending' THEN 1 ELSE 0 END) AS pendingDeliverables
                 FROM deliverable_submission ds
