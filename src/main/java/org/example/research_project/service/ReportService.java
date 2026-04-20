@@ -1,5 +1,6 @@
 package org.example.research_project.service;
 
+import org.example.research_project.model.DeliverablesOverviewReport;
 import org.example.research_project.model.FundingUsageReport;
 import org.example.research_project.model.ProjectProgressSummary;
 import org.example.research_project.repository.ReportRepository;
@@ -22,5 +23,9 @@ public class ReportService {
 
     public List<FundingUsageReport> getFundingUsageReports() {
         return reportRepository.findFundingUsageReports();
+    }
+
+    public List<DeliverablesOverviewReport> getDeliverablesOverviewReports() {
+        return reportRepository.findDeliverablesOverviewReports();
     }
 }
