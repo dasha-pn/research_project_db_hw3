@@ -3,38 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Reports</title>
-
-    <!-- ПІДКЛЮЧЕННЯ CSS -->
-    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-
 <body>
 <div class="page">
     <div class="container">
         <div class="card report-accent">
-
             <h1 class="title">Reports</h1>
             <p class="subtitle">
                 Select a report to view aggregated data and analytics for research projects.
             </p>
 
             <div class="reports-grid">
-
                 <div class="report-card">
-                    <div class="report-title">
-                        Project Progress Summary
-                    </div>
+                    <div class="report-title">Project Progress Summary</div>
                     <div class="report-desc">
                         Aggregated overview of task execution progress for all projects.
                     </div>
-
-                    <a class="link-button"
-                       th:href="@{/reports/project-progress}">
+                    <a class="link-button" th:href="@{/reports/project-progress}">
                         Open Report
                     </a>
                 </div>
-
-                <!-- ТУТ ДОДАСИ ЩЕ 2 REPORTS -->
             </div>
 
             <div class="actions">
@@ -42,7 +31,6 @@
                     Back to Home
                 </a>
             </div>
-
         </div>
     </div>
 </div>

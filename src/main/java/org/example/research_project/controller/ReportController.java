@@ -1,6 +1,6 @@
 package org.example.research_project.controller;
 
-import org.example.research_project.repository.ReportRepository;
+import org.example.research_project.service.ReportService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ReportController {
 
-    private final ReportRepository reportRepository;
+    private final ReportService reportService;
 
-    public ReportController(ReportRepository reportRepository) {
-        this.reportRepository = reportRepository;
+    public ReportController(ReportService reportService) {
+        this.reportService = reportService;
     }
 
     @GetMapping("/reports")
@@ -21,7 +21,7 @@ public class ReportController {
 
     @GetMapping("/reports/project-progress")
     public String projectProgressReport(Model model) {
-        model.addAttribute("reports", reportRepository.findProjectProgressSummaries());
+        model.addAttribute("reports", reportService.getProjectProgressSummaries());
         return "reports/project-progress";
     }
 }
