@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Progress Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f3f3f3;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .actions {
+            margin-bottom: 16px;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #1976d2;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+
+        a.button:hover {
+            background: #125aa0;
+        }
+    </style>
+</head>
+<body>
+<h1>Project Progress Summary</h1>
+
+<div class="actions">
+    <a class="button" th:href="@{/reports}">Back to Reports</a>
+    <a class="button" th:href="@{/}">Back to Home</a>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Project Code</th>
+        <th>Project Title</th>
+        <th>Total Tasks</th>
+        <th>Completed Tasks</th>
+        <th>In Progress Tasks</th>
+        <th>Pending Tasks</th>
+        <th>Overall Progress (%)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="report : ${reports}">
+        <td th:text="${report.projectInternalCode()}">RP-001</td>
+        <td th:text="${report.projectTitle()}">Sample Project</td>
+        <td th:text="${report.totalTasks()}">0</td>
+        <td th:text="${report.completedTasks()}">0</td>
+        <td th:text="${report.inProgressTasks()}">0</td>
+        <td th:text="${report.pendingTasks()}">0</td>
+        <td th:text="${report.overallProgressPercent()}">0</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
