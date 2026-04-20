@@ -513,3 +513,7 @@ select:focus {
 .card.report-accent {
     border-left: 6px solid #2563eb;
 }
+
+.deliverables-accent {
+    border-left: 6px solid #7c3aed;
+}
