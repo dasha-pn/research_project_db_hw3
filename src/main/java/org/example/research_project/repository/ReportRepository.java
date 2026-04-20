@@ -1,5 +1,6 @@
 package org.example.research_project.repository;
 
+import org.example.research_project.model.DeliverablesOverviewReport;
 import org.example.research_project.model.FundingUsageReport;
 import org.example.research_project.model.ProjectProgressSummary;
 import org.springframework.jdbc.core.simple.JdbcClient;
@@ -51,6 +52,23 @@ public class ReportRepository {
 
         return jdbcClient.sql(sql)
                 .query(FundingUsageReport.class)
+                .list();
+    }
+
+    public List<DeliverablesOverviewReport> findDeliverablesOverviewReports() {
+        String sql = """
+                SELECT
+                    ds.project_internal_code AS projectInternalCode,
+                    COUNT(ds.deliverable_id) AS totalDeliverables,
+                    SUM(CASE WHEN ds.status = 'accepted' THEN 1 ELSE 0 END) AS acceptedDeliverables,
+                    SUM(CASE WHEN ds.status = 'pending' THEN 1 ELSE 0 END) AS pendingDeliverables
+                FROM deliverable_submission ds
+                GROUP BY ds.project_internal_code
+                ORDER BY ds.project_internal_code
+                """;
+
+        return jdbcClient.sql(sql)
+                .query(DeliverablesOverviewReport.class)
                 .list();
     }
 }
