@@ -30,4 +30,10 @@ public class ReportController {
         model.addAttribute("reports", reportService.getFundingUsageReports());
         return "reports/funding-report";
     }
+
+    @GetMapping("/reports/deliverables")
+    public String deliverablesReport(Model model) {
+        model.addAttribute("reports", reportService.getDeliverablesOverviewReports());
+        return "reports/deliverables-report";
+    }
 }
