@@ -1,5 +1,6 @@
 package org.example.research_project.service;
 
+import org.example.research_project.model.FundingUsageReport;
 import org.example.research_project.model.ProjectProgressSummary;
 import org.example.research_project.repository.ReportRepository;
 import org.springframework.stereotype.Service;
@@ -17,5 +18,9 @@ public class ReportService {
 
     public List<ProjectProgressSummary> getProjectProgressSummaries() {
         return reportRepository.findProjectProgressSummaries();
+    }
+
+    public List<FundingUsageReport> getFundingUsageReports() {
+        return reportRepository.findFundingUsageReports();
     }
 }
