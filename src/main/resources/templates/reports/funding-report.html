@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Funding Usage Report</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="page">
+    <div class="container">
+        <div class="card report-accent">
+            <h1 class="form-title">Funding Usage Report</h1>
+            <p class="form-subtitle">
+                Overview of total, spent, and remaining budget for each funding source.
+            </p>
+
+            <div class="actions report-actions">
+                <a class="btn-secondary" th:href="@{/reports}">Back to Reports</a>
+                <a class="btn-secondary" th:href="@{/}">Back to Home</a>
+            </div>
+
+            <table class="report-table">
+                <thead>
+                <tr>
+                    <th>Funding Source</th>
+                    <th>Total Budget</th>
+                    <th>Spent Budget</th>
+                    <th>Remaining Budget</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="report : ${reports}">
+                    <td th:text="${report.fundingSource()}">Horizon Europe</td>
+                    <td th:text="${report.totalBudget()}">0</td>
+                    <td th:text="${report.spendBudget()}">0</td>
+                    <td th:text="${report.remainingBudget()}">0</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -9,6 +9,7 @@
 <div class="page">
     <div class="container">
         <div class="card report-accent">
+
             <h1 class="title">Reports</h1>
             <p class="subtitle">
                 Select a report to view aggregated data and analytics for research projects.
@@ -24,6 +25,16 @@
                         Open Report
                     </a>
                 </div>
+
+                <div class="report-card">
+                    <div class="report-title">Funding Usage Report</div>
+                    <div class="report-desc">
+                        Overview of allocated, spent, and remaining budget for each funding source.
+                    </div>
+                    <a class="link-button" th:href="@{/reports/funding}">
+                        Open Report
+                    </a>
+                </div>
             </div>
 
             <div class="actions">
@@ -31,6 +42,7 @@
                     Back to Home
                 </a>
             </div>
+
         </div>
     </div>
 </div>
