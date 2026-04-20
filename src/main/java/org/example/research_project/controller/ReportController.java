@@ -24,4 +24,10 @@ public class ReportController {
         model.addAttribute("reports", reportService.getProjectProgressSummaries());
         return "reports/project-progress";
     }
+
+    @GetMapping("/reports/funding")
+    public String fundingReport(Model model) {
+        model.addAttribute("reports", reportService.getFundingUsageReports());
+        return "reports/funding-report";
+    }
 }
