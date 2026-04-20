@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Deliverables Overview</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="page">
+    <div class="container">
+        <div class="card report-accent">
+            <h1 class="form-title">Deliverables Overview</h1>
+            <p class="form-subtitle">
+                Summary of total, accepted, and pending deliverables for each research project.
+            </p>
+
+            <div class="actions report-actions">
+                <a class="btn-secondary" th:href="@{/reports}">Back to Reports</a>
+                <a class="btn-secondary" th:href="@{/}">Back to Home</a>
+            </div>
+
+            <table class="report-table">
+                <thead>
+                <tr>
+                    <th>Project Code</th>
+                    <th>Total Deliverables</th>
+                    <th>Accepted Deliverables</th>
+                    <th>Pending Deliverables</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="report : ${reports}">
+                    <td th:text="${report.projectInternalCode()}">RP-001</td>
+                    <td th:text="${report.totalDeliverables()}">0</td>
+                    <td th:text="${report.acceptedDeliverables()}">0</td>
+                    <td th:text="${report.pendingDeliverables()}">0</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
