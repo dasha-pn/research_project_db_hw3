@@ -1,0 +1,9 @@
+submission_id,project_internal_code,deliverable_planned,submission_date,status,file_reference
+1,RP-001,D1,2023-03-05,accepted,file1.pdf
+2,RP-001,D2,2023-03-10,pending,file2.pdf
+3,RP-002,D1,2023-04-05,accepted,file3.pdf
+4,RP-003,D1,2023-05-20,rejected,file4.pdf
+5,RP-004,D1,2023-07-01,pending,file5.pdf
+6,RP-005,D3,2023-08-10,accepted,file6.pdf
+7,RP-006,D2,2023-03-25,accepted,file7.pdf
+8,RP-007,D1,2023-05-01,pending,file8.pdf

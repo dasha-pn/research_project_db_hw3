@@ -1,0 +1,9 @@
+deliverable_id,project_internal_code,related_task,deliverable_name,author,status,deliverable_type,submission_date
+1,RP-001,T1,Research Paper,d.shevchuk,accepted,paper,2023-03-05
+2,RP-001,T2,Dataset,j.smith,pending,data,2023-03-10
+3,RP-002,T1,Model Report,m.ivanov,accepted,report,2023-04-05
+4,RP-003,T3,Simulation Results,a.koval,rejected,report,2023-05-20
+5,RP-004,T1,Climate Analysis,l.chen,pending,report,2023-07-01
+6,RP-005,T2,Medical Dataset,s.muller,accepted,data,2023-08-10
+7,RP-006,T1,Robot Design,m.brown,accepted,design,2023-03-25
+8,RP-007,T4,Genome Study,k.yamamoto,pending,report,2023-05-01

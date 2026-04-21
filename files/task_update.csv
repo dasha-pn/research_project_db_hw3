@@ -1,0 +1,9 @@
+update_id,project_internal_code,project_task,task_status,completion_date,task_progress_percent
+1,RP-001,T1,completed,2023-03-01,100.00
+2,RP-001,T2,in_progress,2023-05-01,70.00
+3,RP-002,T1,completed,2023-04-01,100.00
+4,RP-003,T3,pending,2023-09-01,0.00
+5,RP-004,T1,in_progress,2023-05-01,60.00
+6,RP-005,T2,completed,2023-08-01,100.00
+7,RP-006,T1,completed,2023-03-20,100.00
+8,RP-007,T4,in_progress,2023-05-01,85.00

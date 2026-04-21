@@ -4,8 +4,9 @@ services:
     container_name: flights-db-hw-3-mysql
     volumes:
       - ./data/mysql:/var/lib/mysql
+      - ./files:/var/lib/mysql-files
     ports:
-      - "3307:3306"
+      - "13306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: inflight_catering_service
+      MYSQL_DATABASE: research_project_db

@@ -1,0 +1,8 @@
+admin_staff_id,email,staff_role,project_internal_code
+A1,admin1@mit.edu,manager,RP-001
+A2,admin2@stanford.edu,finance,RP-002
+A3,admin3@ox.ac.uk,manager,RP-003
+A4,admin4@epfl.ch,finance,RP-004
+A5,admin5@ucu.edu.ua,manager,RP-005
+A6,admin6@tum.de,finance,RP-006
+A7,admin7@harvard.edu,manager,RP-007

@@ -1,0 +1,8 @@
+project_internal_code,grant_agreement_number,project_title,start_date,project_status,host_org_name
+RP-001,GA-123,AI for Science,2023-01-01,active,MIT
+RP-002,GA-124,Data Systems,2023-03-01,completed,Stanford University
+RP-003,GA-125,Quantum Models,2023-05-15,active,Oxford University
+RP-004,GA-126,Climate Modeling,2023-06-10,active,EPFL
+RP-005,GA-127,Healthcare AI,2023-07-01,active,UCU
+RP-006,GA-128,Robotics Research,2023-02-20,completed,TU Munich
+RP-007,GA-129,Bioinformatics Study,2023-04-18,active,Harvard University
